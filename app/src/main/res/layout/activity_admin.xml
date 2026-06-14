@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:layoutDirection="rtl">
+
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="#1A237E" android:elevation="4dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="פאנל ניהול — בפיקוח" android:textColor="#FFFFFF"
+            android:textSize="18sp" android:textStyle="bold"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <TextView android:id="@+id/deviceOwnerNotice"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="⚠ הגדר Device Owner דרך ADB כדי להפעיל חסימות מתקדמות"
+                android:textColor="#E65100" android:textSize="13sp"
+                android:background="#FFF3E0" android:padding="10dp"
+                android:layout_marginBottom="12dp" android:visibility="gone"/>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="ניהול" android:textColor="#1A237E" android:textSize="13sp"
+                android:textStyle="bold" android:paddingBottom="8dp"/>
+            <Button android:id="@+id/btnSelectApps" android:layout_width="match_parent"
+                android:layout_height="52dp" android:text="📱  בחירת אפליקציות מאושרות"
+                android:backgroundTint="#FFFFFF" android:textColor="#212121"
+                android:elevation="2dp" android:layout_marginBottom="8dp"/>
+
+            <Button android:id="@+id/btnAdbSetup" android:layout_width="match_parent"
+                android:layout_height="52dp" android:text="⚙  הגדרת Device Owner (ADB)"
+                android:backgroundTint="#FFFFFF" android:textColor="#212121"
+                android:elevation="2dp" android:layout_marginBottom="16dp"/>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="#DDDDDD" android:layout_marginBottom="16dp"/>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="חסימות" android:textColor="#1A237E" android:textSize="13sp"
+                android:textStyle="bold" android:paddingBottom="4dp"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="כבוי = לא חסום  |  פעיל = חסום  |  קבוע 🔐 = חסום לצמיתות"
+                android:textColor="#757575" android:textSize="11sp" android:paddingBottom="12dp"/>
+
+            <!-- שורת התראות -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="#FFFFFF" android:padding="10dp" android:elevation="1dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="חסימת שורת התראות" android:textColor="#212121" android:textSize="14sp"/>
+                    <TextView android:id="@+id/statusStatusBar" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="12sp"/>
+                </LinearLayout>
+                <Button android:id="@+id/btnStatusBarOff" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="כבוי" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnStatusBarOn" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="פעיל" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnStatusBarPerm" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="קבוע" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+            </LinearLayout>
+
+            <!-- התקנות -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="#FFFFFF" android:padding="10dp" android:elevation="1dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="חסימת התקנות" android:textColor="#212121" android:textSize="14sp"/>
+                    <TextView android:id="@+id/statusInstall" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="12sp"/>
+                </LinearLayout>
+                <Button android:id="@+id/btnInstallOff" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="כבוי" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnInstallOn" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="פעיל" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnInstallPerm" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="קבוע" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+            </LinearLayout>
+
+            <!-- WiFi -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="#FFFFFF" android:padding="10dp" android:elevation="1dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="חסימת WiFi" android:textColor="#212121" android:textSize="14sp"/>
+                    <TextView android:id="@+id/statusWifi" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="12sp"/>
+                </LinearLayout>
+                <Button android:id="@+id/btnWifiOff" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="כבוי" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnWifiOn" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="פעיל" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnWifiPerm" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="קבוע" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+            </LinearLayout>
+
+            <!-- נקודה חמה -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="#FFFFFF" android:padding="10dp" android:elevation="1dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="חסימת נקודה חמה" android:textColor="#212121" android:textSize="14sp"/>
+                    <TextView android:id="@+id/statusHotspot" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="12sp"/>
+                </LinearLayout>
+                <Button android:id="@+id/btnHotspotOff" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="כבוי" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnHotspotOn" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="פעיל" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnHotspotPerm" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="קבוע" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+            </LinearLayout>
+
+            <!-- USB -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="#FFFFFF" android:padding="10dp" android:elevation="1dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="חסימת העברת קבצים USB" android:textColor="#212121" android:textSize="14sp"/>
+                    <TextView android:id="@+id/statusUsb" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="12sp"/>
+                </LinearLayout>
+                <Button android:id="@+id/btnUsbOff" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="כבוי" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnUsbOn" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="פעיל" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnUsbPerm" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="קבוע" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+            </LinearLayout>
+
+            <!-- איפוס מכשיר -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="#FFFFFF" android:padding="10dp" android:elevation="1dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="חסימת איפוס מכשיר" android:textColor="#212121" android:textSize="14sp"/>
+                    <TextView android:id="@+id/statusFactoryReset" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="12sp"/>
+                </LinearLayout>
+                <Button android:id="@+id/btnFactoryResetOff" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="כבוי" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnFactoryResetOn" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="פעיל" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnFactoryResetPerm" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="קבוע" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+            </LinearLayout>
+
+            <!-- הסרת אפליקציות -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="#FFFFFF" android:padding="10dp" android:elevation="1dp"
+                android:layout_marginBottom="2dp">
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="חסימת הסרת אפליקציות" android:textColor="#212121" android:textSize="14sp"/>
+                    <TextView android:id="@+id/statusUninstall" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="12sp"/>
+                </LinearLayout>
+                <Button android:id="@+id/btnUninstallOff" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="כבוי" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnUninstallOn" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="פעיל" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnUninstallPerm" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="קבוע" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+            </LinearLayout>
+
+            <!-- אפשרויות מפתחים -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="#FFFFFF" android:padding="10dp" android:elevation="1dp"
+                android:layout_marginBottom="16dp">
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="חסימת אפשרויות מפתחים" android:textColor="#212121" android:textSize="14sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="קבוע = חוסם גם ADB!" android:textColor="#D32F2F" android:textSize="11sp"/>
+                    <TextView android:id="@+id/statusDevOptions" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textSize="12sp"/>
+                </LinearLayout>
+                <Button android:id="@+id/btnDevOptionsOff" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="כבוי" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnDevOptionsOn" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="פעיל" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+                <Button android:id="@+id/btnDevOptionsPerm" android:layout_width="52dp"
+                    android:layout_height="32dp" android:text="קבוע" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:layout_marginStart="4dp"/>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="#DDDDDD" android:layout_marginBottom="16dp"/>
+
+            <!-- גודל סמלים -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="גודל סמלי אפליקציות" android:textColor="#1A237E"
+                android:textSize="13sp" android:textStyle="bold" android:paddingBottom="10dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="16dp">
+                <Button android:id="@+id/btnIconSmall" android:layout_width="0dp"
+                    android:layout_weight="1" android:layout_height="44dp"
+                    android:text="קטן" android:textColor="#FFFFFF" android:layout_marginEnd="4dp"/>
+                <Button android:id="@+id/btnIconMedium" android:layout_width="0dp"
+                    android:layout_weight="1" android:layout_height="44dp"
+                    android:text="בינוני" android:textColor="#FFFFFF" android:layout_marginEnd="4dp"/>
+                <Button android:id="@+id/btnIconLarge" android:layout_width="0dp"
+                    android:layout_weight="1" android:layout_height="44dp"
+                    android:text="גדול" android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="#DDDDDD" android:layout_marginBottom="16dp"/>
+
+            <Button android:id="@+id/btnSetAsHome" android:layout_width="match_parent"
+                android:layout_height="52dp" android:text="🏠  הגדר בפיקוח כדף הבית"
+                android:backgroundTint="#1A237E" android:textColor="#FFFFFF"
+                android:layout_marginBottom="8dp"/>
+            <Button android:id="@+id/btnWallpaper" android:layout_width="match_parent"
+                android:layout_height="52dp" android:text="🖼  החלף טפט"
+                android:backgroundTint="#FFFFFF" android:textColor="#212121"
+                android:elevation="2dp" android:layout_marginBottom="16dp"/>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="#DDDDDD" android:layout_marginBottom="16dp"/>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="שינוי סיסמה" android:textColor="#1A237E"
+                android:textSize="13sp" android:textStyle="bold" android:paddingBottom="10dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="סיסמה חדשה" android:layout_marginBottom="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/newPassword" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:inputType="textPassword"
+                    android:textColor="#212121"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="אשר סיסמה" android:layout_marginBottom="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/confirmPassword" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:inputType="textPassword"
+                    android:textColor="#212121"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button android:id="@+id/btnChangePassword" android:layout_width="match_parent"
+                android:layout_height="48dp" android:text="עדכן סיסמה"
+                android:backgroundTint="#1A237E" android:textColor="#FFFFFF"
+                android:layout_marginBottom="16dp"/>
+
+            <View android:layout_width="match_parent" android:layout_height="2dp"
+                android:background="#880000" android:layout_marginBottom="16dp"/>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="הסרת הרשאות מנהל" android:textColor="#880000"
+                android:textSize="13sp" android:textStyle="bold" android:paddingBottom="4dp"/>
+
+            <TextView android:id="@+id/statusLockRemoveOwner"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="12sp" android:paddingBottom="8dp"/>
+
+            <Button android:id="@+id/btnRemoveDeviceOwner" android:layout_width="match_parent"
+                android:layout_height="48dp" android:text="הסר Device Owner (דורש סיסמה)"
+                android:backgroundTint="#880000" android:textColor="#FFFFFF"
+                android:layout_marginBottom="8dp"/>
+
+            <Button android:id="@+id/btnLockRemoveOwner" android:layout_width="match_parent"
+                android:layout_height="48dp" android:text="🔐 נעל כפתור הסרה לצמיתות"
+                android:backgroundTint="#4A0000" android:textColor="#FFFFFF"
+                android:layout_marginBottom="32dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button android:id="@+id/btnSave" android:layout_width="match_parent"
+        android:layout_height="56dp" android:text="שמור וסגור"
+        android:backgroundTint="#1A237E" android:textColor="#FFFFFF" android:textSize="16sp"/>
+
+</LinearLayout>

@@ -1,0 +1,4 @@
+-keep class com.bepikuach.admin.** { *; }
+-keep class com.bepikuach.receivers.** { *; }
+-keep class com.bepikuach.services.** { *; }
+-keepclassmembers class * extends android.app.admin.DeviceAdminReceiver { *; }

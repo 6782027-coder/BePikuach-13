@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <ImageView android:id="@+id/wallpaperImage"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:scaleType="centerCrop" android:contentDescription="טפט"/>
+
+    <!-- Header -->
+    <LinearLayout android:id="@+id/header"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:gravity="center"
+        android:paddingTop="28dp" android:paddingBottom="8dp"
+        android:background="#F0F4FF">
+
+        <TextView android:id="@+id/clockText"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="#1A237E" android:textSize="52sp"
+            android:fontFamily="sans-serif-light" android:text="00:00"/>
+
+        <TextView android:id="@+id/dateText"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="#5C6BC0" android:textSize="15sp"
+            android:paddingTop="2dp" android:text="יום ראשון"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="בפיקוח" android:textColor="#C5A028"
+            android:textSize="12sp" android:paddingTop="2dp"/>
+    </LinearLayout>
+
+    <!-- Bottom bar - רק הגדרות ופיצול מסך -->
+    <LinearLayout android:id="@+id/bottomBar"
+        android:layout_width="match_parent" android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center" android:background="#F0F4FF"
+        android:orientation="horizontal" android:elevation="4dp">
+
+        <TextView android:id="@+id/recentAppsBtn"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="⧉ מעבר מהיר"
+            android:textColor="#1A237E" android:textSize="13sp"
+            android:gravity="center" android:padding="8dp"/>
+
+        <View android:layout_width="1dp" android:layout_height="32dp"
+            android:background="#CCCCCC"/>
+
+        <TextView android:id="@+id/settingsBtn"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="⚙ הגדרות" android:textColor="#C5A028"
+            android:textSize="13sp" android:gravity="center" android:padding="8dp"/>
+
+        <View android:layout_width="1dp" android:layout_height="32dp"
+            android:background="#CCCCCC"/>
+
+        <TextView android:id="@+id/splitScreenBtn"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="⊟ פיצול" android:textColor="#1A237E"
+            android:textSize="13sp" android:gravity="center" android:padding="8dp"/>
+    </LinearLayout>
+
+    <!-- Apps Grid -->
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/appsGrid"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_below="@id/header" android:layout_above="@id/bottomBar"
+        android:clipToPadding="true" android:padding="8dp"
+        android:background="#FFFFFF" android:scrollbars="none"/>
+
+</RelativeLayout>

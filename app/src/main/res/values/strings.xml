@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">בפיקוח</string>
+    <string name="accessibility_service_label">שירות חסימת בפיקוח</string>
+    <string name="accessibility_service_description">מאפשר לאפליקציה לחסום גישה לאפליקציות לא מאושרות</string>
+    <string name="enter_password">הכנס סיסמת מנהל</string>
+    <string name="wrong_password">סיסמה שגויה</string>
+    <string name="settings">הגדרות</string>
+    <string name="approved_apps">אפליקציות מאושרות</string>
+    <string name="all_apps">כל האפליקציות</string>
+    <string name="blocked_message">אפליקציה זו אינה מאושרת</string>
+    <string name="change_wallpaper">החלף טפט</string>
+    <string name="block_status_bar">חסום שורת התראות</string>
+    <string name="block_recents">חסום מחליף אפליקציות מקורי</string>
+    <string name="permanent_lock">נעילה קבועה</string>
+    <string name="save">שמור</string>
+    <string name="cancel">ביטול</string>
+    <string name="password_hint">סיסמה</string>
+    <string name="admin_panel">פאנל ניהול</string>
+    <string name="search_apps">חיפוש אפליקציה…</string>
+    <string name="new_password">סיסמה חדשה</string>
+    <string name="confirm_password">אשר סיסמה</string>
+    <string name="passwords_not_match">הסיסמאות אינן תואמות</string>
+    <string name="permanent_lock_warning">אזהרה: לאחר הפעלת נעילה קבועה לא ניתן יהיה להסיר את האפליקציה!</string>
+    <string name="confirm">אשר</string>
+    <string name="select_apps">בחירת אפליקציות מאושרות</string>
+    <string name="whitelist_log">רשימה לבנה — חסימות אחרונות</string>
+    <string name="adb_setup">הגדרת מנהל מוחלט (ADB)</string>
+    <string name="icon_size">גודל סמלים</string>
+    <string name="split_screen">פיצול מסך</string>
+    <string name="recent_apps">אפליקציות אחרונות</string>
+    <string name="allow">התר</string>
+    <string name="no_blocked">אין חסימות אחרונות</string>
+</resources>

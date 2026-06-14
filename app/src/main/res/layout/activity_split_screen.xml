@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:layoutDirection="rtl">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary_dark" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/surface"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/firstAppLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="אפליקציה 1: לא נבחרה"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:paddingBottom="4dp" />
+
+        <TextView
+            android:id="@+id/secondAppLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="אפליקציה 2: לא נבחרה"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="בחר שתי אפליקציות:"
+        android:textColor="@color/accent"
+        android:textSize="14sp"
+        android:padding="12dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/appsGrid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btnLaunchSplit"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="פתח פיצול מסך"
+        android:backgroundTint="@color/accent"
+        android:textColor="@color/background"
+        android:textSize="16sp"
+        android:enabled="false" />
+
+</LinearLayout>
